@@ -35,4 +35,4 @@ The [database](https://www.postgresqltutorial.com/postgresql-getting-started/pos
 `country` – stores country names.
 
 ## About the project
-This project will primarily serve as practice for writing queries and exporting a subset of the data to Tableau to visualize. 
+In this project, I perform exploratory data analysis with SQL and visualize a subset of the data in Tableau. 
