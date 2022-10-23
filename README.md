@@ -36,3 +36,12 @@ The [database](https://www.postgresqltutorial.com/postgresql-getting-started/pos
 
 ## About the project 
 Halloween is just over a week away and a DVD rental company would like to have more insights on films they rent to increase sales around the holiday. I explore the data and uncover insights using SQL. 
+
+## Insights 
+
+Most horror film have an MPAA rating of PG, PG-13, or R. Among the top five rented films, two are rated R, one PG-13, another PG, and the last is rated G while the top rented film is also rated G. To target younger audiences, we may want to include a few more G rated titles. The average rental duration for the top horror films is just under five days and so having a few extra copies of these films in inventory may be helpful. 
+
+Currently, store #1 has 112 titles and store #2 has 136 horror titles and each store has one active staff member. It would be beneficial to hire at least another store associate for each location for the holiday. 
+
+Customers can be marketed based on city, starting with cities whose name begins with A, B, or C. Currently, we have no customers in the system who have never rented a DVD from any of the stores. The are also no customers who are in the same household. This is important as we do not want to send duplicate marketing materials to people in the same household. 
+
