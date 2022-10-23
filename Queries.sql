@@ -8,6 +8,10 @@ join category
 on category.category_id = fc.category_id
 where category.name = 'Horror';  
 
+-- How many titles are in each rating group?
+select rating, count(*)
+from horror_films
+group by rating; 
 
 -- How many horror films are currently in inventory by store? 
 select inventory.store_id as store, count(*)
@@ -38,16 +42,18 @@ limit 5;
 
 -- What are the top rented horror films? 
 create view top_rented_horror AS
-select horror_films.film_id as id, horror_films.title as title, count(inventory.film_id) as rented
+select horror_films.film_id as id, horror_films.title as title, count(inventory.film_id) as rented, rating  
 from rental 
 join inventory 
 on inventory.inventory_id = rental.inventory_id 
 join horror_films
 on horror_films.film_id = inventory.film_id
-group by id, title
+group by id, title, rating
 order by rented desc
 limit 10;
  
+select * 
+from top_rented_horror; 
  
 -- What was the average rental duration of these top films?
 select avg(rental_duration)
@@ -88,4 +94,3 @@ from store
 left join staff
 on store.store_id = staff.store_id
 where staff.active = true; 
-
