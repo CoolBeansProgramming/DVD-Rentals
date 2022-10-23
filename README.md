@@ -35,4 +35,4 @@ The [database](https://www.postgresqltutorial.com/postgresql-getting-started/pos
 `country` – stores country names.
 
 ## About the project 
-Halloween is just over a week away and a DVD rental company would like to have more insights on films they rent to increase sales around the holiday. 
+Halloween is just over a week away and a DVD rental company would like to have more insights on films they rent to increase sales around the holiday. I explore the data and uncover insights using SQL. 
