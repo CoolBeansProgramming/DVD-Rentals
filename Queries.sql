@@ -6,7 +6,7 @@ join film_category fc
 on film.film_id = fc.film_id
 join category 
 on category.category_id = fc.category_id
-WHERE category.name = 'Horror';  
+where category.name = 'Horror';  
 
 
 -- How many horror films are currently in inventory by store? 
@@ -18,8 +18,8 @@ join film_category fc
 on film.film_id = fc.film_id
 join category
 on category.category_id = fc.category_id
-WHERE category.name = 'Horror'
-GROUP BY store;
+where category.name = 'Horror'
+group by store;
 
 
 --What are the top selling horror films and their rating? 
@@ -54,24 +54,38 @@ select avg(rental_duration)
 from film
 where exists (select * from top_rented_horror);
 
--- Which customers are in the same houehold?
-select cust1.first_name, cust2.last_name, cust1.first_name, cust2.last_name
-from customer as cust1
-join customer as cust2
-on cust1.customer_id <> cust2.customer_id and cust1.address_id = cust2.address_id;
-
+-- Which customers in the United States live in a city that start with A, B, or C?
+-- We can use this is a marketing list and start from A,B,C...to Z cities 
+select c.first_name, c.last_name, city.city, country.country 
+from country 
+join  city 
+on country.country_id = city.country_id
+join address 
+on city.city_id = address.city_id 
+join customer c 
+on c.customer_id = address.city_id
+where country.country = 'United States' AND city.city ~ '^[ABC]';
 
 -- Which customers have never rented a DVD?
+-- Maybe these customers can be marketed to
 select customer.first_name, customer.last_name, customer.address_id
 from customer
 left join rental
 on customer.customer_id = rental.customer_id 
 where rental.customer_id IS NULL;
 
+-- Which customers are in the same houehold?
+-- We don't want to send duplicate marketing materials if two people live in the same household 
+select cust1.first_name, cust2.last_name, cust1.first_name, cust2.last_name
+from customer as cust1
+join customer as cust2
+on cust1.customer_id <> cust2.customer_id and cust1.address_id = cust2.address_id;
+
 -- Which stores have the most active staff? 
-SELECT store.store_id, CONCAT(staff.first_name,' ', staff.last_name)
-FROM store
-LEFT JOIN staff
-ON store.store_id = staff.store_id
-WHERE staff.active = true; 
+-- Want to see if there is enough staff avaliable for the holiday 
+select store.store_id, CONCAT(staff.first_name,' ', staff.last_name)
+from store
+left join staff
+on store.store_id = staff.store_id
+where staff.active = true; 
 
