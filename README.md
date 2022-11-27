@@ -1,5 +1,5 @@
 # DVD-Rentals
-This database represents the business processes of a DVD rental store
+This database represents the business processes of a DVD rental store.
 
 
 ## About the database 
