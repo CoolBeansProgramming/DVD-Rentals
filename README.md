@@ -1,4 +1,4 @@
-# DVD Rentals
+# DVD Halloween Rentals
 This database represents the business processes of a DVD rental store.
 
 
