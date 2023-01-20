@@ -1,6 +1,6 @@
 # DVD Halloween Rentals
 This database represents the business processes of a DVD rental store.
-
+## <img align="right" width="500" height="350" src="https://github.com/CoolBeansProgramming/DVD-Rentals/blob/main/halloween.jpg?raw=true">
 
 ## About the database 
 
